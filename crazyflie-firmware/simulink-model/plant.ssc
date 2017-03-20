@@ -1,0 +1,47 @@
+component plant
+%Plant of quadrocopter
+
+inputs
+   ctrl={[0;0;0;0],'N'}; %Thrust:left
+end
+
+outputs
+    pos={[0;0;0],'m'}; %Position
+    v = {[0;0;0], 'm/s' }; %Velocity
+    a = {[0;0;0], 'm/s^2' }; %Acceleration
+    
+    angle={[0;0;0],'rad'};%Angle
+    w={[0;0;0],'rad/s'}%Angular velocity
+end
+
+parameters
+    m={0.027,'kg'};%Mass
+    g={9.81,'m/s^2'};%Gravity
+    d={0.046,'m'};%Arm length
+    k={1e-9,'1'};%Lift constant
+    b={2.75e-11,'1'};%Drag constant
+end
+
+parameters(Access=private)    
+    %Moment of inertia matrix
+    Jx={1.395e-5,'kg*m^2'};
+    Jy={1.436e-5,'kg*m^2'};
+    Jz={2.173e-5,'kg*m^2'};
+    J=[Jx,0,0;0,Jy,0;0,0,Jz];
+
+    % Add time invariant parameters here 
+
+end
+
+variables(Access=private)
+    
+    % Add time variant variables here
+
+end
+
+equations
+
+    % Add all equations here 
+
+end
+end
