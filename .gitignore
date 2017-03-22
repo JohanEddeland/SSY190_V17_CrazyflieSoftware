@@ -16,13 +16,13 @@ crazyflie-firmware/cf1.*
 
 crazyflie-firmware/generated-test/**
 
-crazyflie-firmware/simulink-model/crazyflie_controller_ert_rtw/
+crazyflie-firmware/simulink-model/crazyflie_ert_rtw/
 crazyflie-firmware/simulink-model/slprj/
 
-crazyflie-firmware/src/modules/interface/crazyflie_controller.h
-crazyflie-firmware/src/modules/interface/crazyflie_controllerModel.h
+crazyflie-firmware/src/modules/interface/crazyflie.h
+crazyflie-firmware/src/modules/interface/crazyflieModel.h
 crazyflie-firmware/src/modules/interface/rtmodel.h
 crazyflie-firmware/src/modules/interface/rtwtypes.h
-crazyflie-firmware/src/modules/src/crazyflie_controller.c
-crazyflie-firmware/src/modules/src/crazyflie_controllerModel.c
+crazyflie-firmware/src/modules/src/crazyflie.c
+crazyflie-firmware/src/modules/src/crazyflieModel.c
 

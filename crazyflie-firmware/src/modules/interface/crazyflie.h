@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'crazyflie'.
  *
- * Model version                  : 1.163
+ * Model version                  : 1.166
  * Simulink Coder version         : 8.11 (R2016b) 25-Aug-2016
- * C/C++ source code generated on : Wed Mar 22 11:34:50 2017
+ * C/C++ source code generated on : Wed Mar 22 11:53:29 2017
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -28,11 +28,6 @@
 #endif                                 /* crazyflie_COMMON_INCLUDES_ */
 
 /* Macros for accessing real-time model data structure */
-
-/* Block signals and states (auto storage) for system '<Root>' */
-typedef struct {
-  real_T DiscreteTimeIntegrator_DSTATE;/* '<Root>/Discrete-Time Integrator' */
-} DW;
 
 /* External inputs (root inport signals with auto storage) */
 typedef struct {
@@ -61,9 +56,6 @@ typedef struct {
   real_T Log5;                         /* '<Root>/Log5' */
   real_T Log6;                         /* '<Root>/Log6' */
 } ExtY;
-
-/* Block signals and states (auto storage) */
-extern DW rtDW;
 
 /* External inputs (root inport signals with auto storage) */
 extern ExtU rtU;
