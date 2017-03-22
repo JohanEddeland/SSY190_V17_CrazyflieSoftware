@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'crazyflie'.
  *
- * Model version                  : 1.162
+ * Model version                  : 1.163
  * Simulink Coder version         : 8.11 (R2016b) 25-Aug-2016
- * C/C++ source code generated on : Mon Mar 20 10:20:41 2017
+ * C/C++ source code generated on : Wed Mar 22 11:34:50 2017
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -21,6 +21,9 @@
 
 #include "crazyflie.h"
 
+/* Block signals and states (auto storage) */
+DW rtDW;
+
 /* External inputs (root inport signals with auto storage) */
 ExtU rtU;
 
@@ -30,7 +33,15 @@ ExtY rtY;
 /* Model step function */
 void crazyflie_step(void)
 {
-  /* (no output/update code required) */
+  /* Outport: '<Root>/Log1' incorporates:
+   *  DiscreteIntegrator: '<Root>/Discrete-Time Integrator'
+   */
+  rtY.Log1 = rtDW.DiscreteTimeIntegrator_DSTATE;
+
+  /* Update for DiscreteIntegrator: '<Root>/Discrete-Time Integrator' incorporates:
+   *  Update for Inport: '<Root>/Gyro_x'
+   */
+  rtDW.DiscreteTimeIntegrator_DSTATE += 0.01 * rtU.Gyro_x;
 }
 
 /* Model initialize function */
