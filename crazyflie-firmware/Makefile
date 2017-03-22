@@ -193,9 +193,7 @@ PROJ_OBJ_CF2 += configblockeeprom.o
 PROJ_OBJ_CF2 += libarm_math.a
 
 # Code Generation
-SRCS=$(notdir $(wildcard simulink-model/crazyflie_ert_rtw/*.c))
-CODE_GEN=$(SRCS:.c=.o)
- 
+PROJ_OBJ_CF2 += crazyflie.o crazyflieModel.o 
 
 OBJ = $(FREERTOS_OBJ) $(PORT_OBJ) $(ST_OBJ) $(PROJ_OBJ) $(CODE_GEN)
 ifeq ($(PLATFORM), CF1)
@@ -324,7 +322,10 @@ endif
 #################### Targets ###############################
 
 
-all: move check_submodules build
+all: check_submodules
+	make move
+	make build
+
 build: clean_version compile print_version size
 compile: clean_version $(PROG).hex $(PROG).bin $(PROG).dfu
 
