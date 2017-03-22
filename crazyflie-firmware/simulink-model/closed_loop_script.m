@@ -1,6 +1,10 @@
 %% Breach script for closed_loop.slx
 
 %% Initialize Breach
+% Disable some warnings that makes the script look ugly
+warning('off', 'Simulink:Engine:OutputNotConnected');
+warning('off', 'Simulink:Engine:InputNotConnected');
+
 InitBreach;
 B = BreachSimulinkSystem('closed_loop');
 
@@ -145,7 +149,7 @@ B.PrintSignals();
 
 % We want to see if the yaw is always close to its reference or not
 % The STL specification for this could be:
-yaw_close_to_ref = STL_Formula('yaw_close_to_ref','alw_[0,TotalSimulationTime](abs(Yaw[t] - Yaw_reference[t]) < tol)');
+yaw_close_to_ref = STL_Formula('yaw_close_to_ref','alw_[0,TotalSimulationTime](abs(Yawrate[t] - Ref_YawRate[t]) < tol)');
 % What should the tolerance be? Let's try with 0.1
 yaw_close_to_ref = set_params(yaw_close_to_ref,{'tol'},[0.1]);
 
