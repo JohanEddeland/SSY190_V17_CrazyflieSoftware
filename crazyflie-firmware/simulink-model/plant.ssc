@@ -18,15 +18,15 @@ parameters
     m = {0.027,'kg'};%Mass
     g = {9.81,'m/s^2'};%Gravity
     d = {0.046,'m'};%Arm length
-    k = {1e-9,'1'};%Lift constant
-    b = {2.75e-11,'1'};%Drag constant
+    k = {1.9796e-9,'1'};%Lift constant
+    b = {2.5383e-11,'1'};%Drag constant
 end
 
 parameters(Access=private)    
     %Moment of inertia matrix
-    Jx = {1.395e-5,'kg*m^2'};
-    Jy = {1.436e-5,'kg*m^2'};
-    Jz = {2.173e-5,'kg*m^2'};
+    Jx = {1.1463e-5,'kg*m^2'};
+    Jy = {1.6993e-5,'kg*m^2'};
+    Jz = {2.9944e-5,'kg*m^2'};
     J = [Jx,0,0;0,Jy,0;0,0,Jz];
 
     % Add time invariant parameters here 
